@@ -92,7 +92,7 @@ module Phrasier
     end
 
     def tags
-      resp = RestClient.get paramize_url(base_url("tags"), tokens), {accept: :json}
+      resp = RestClient.get paramize_url(base_url("tags"), tokens)
       JSON.parse(resp).collect do |tag|
         tag['name']
       end
