@@ -1,8 +1,3 @@
-require 'rest-client'
-require 'yaml'
-require 'json'
-require 'timeout'
-
 module Phrasier
   class Phrasier
     attr_accessor :session, :keys, :auth_token
