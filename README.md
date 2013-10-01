@@ -1,20 +1,8 @@
 # Phrasier
 
-TODO: Write a gem description
+Phrasier is an unofficial Ruby library that wraps the PhraseApp Rest API. Ultimately it should support all operations, but currently it only supports (batch) deletion of keys and display of tags. The goal of this library to develop a gem that makes batch manipulation of keys across languages and projects easier. Phrasier has not been published to Rubygems yet, as it is incomplete.
 
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'phrasier'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install phrasier
+Phrasier is currently tailored for usage through IRB.
 
 ## Usage
 
