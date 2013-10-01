@@ -19,7 +19,18 @@ module Phrasier
       end
 
       def read_file
-        JSON.parse(File.read('credentials.json'))
+        filename = 'credentials.json'
+        begin
+          credentials = File.read(filename)
+          JSON.parse(credentials)
+        rescue Errno::ENOENT
+          raise <<-error
+Could not read your credential settings. Please ensure you've got a configuration file at
+#{Dir.pwd}/#{filename}
+
+See the README for information on structure.
+error
+        end
       end
     end
   end

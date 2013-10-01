@@ -27,10 +27,15 @@ module Phrasier
     end
 
     def switch_project(project_name)
-      @current_project = CredentialManager.projects.find do |project|
+      new_project = CredentialManager.projects.find do |project|
         project.name == project_name
       end
-      refresh
+      if new_project
+        @current_project = new_project
+        refresh
+      else
+        puts "No project found named '#{project_name}'. Sticking to '#{@current_project.name}'."
+      end
     end
 
     def projects
